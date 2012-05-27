@@ -1,0 +1,178 @@
+/*Dieser Style wurde mit Teamspeak³Styler 2 erstellt. Coded by D3LTrY. Werbung: http://www.youtube.com/user/D3LTry */
+
+QMainWindow, QWidget, QDialog, TextBrowser, QAbstractItemView, QTextEdit, QTabBar::tab, QDockWidget::title {
+     background: qlineargradient(x1: 0, y1: 0, x1: 0, y2: 1, stop: 0 #adcaff, stop:1 #2240f2);
+     color: #000000;
+     }
+
+QLabel { background-color: transparent; }
+
+QWidget#MainWindowServerTabsWidget, QWidget#MainWindowChatWidget {
+     background-color: transparent;
+     }
+
+QSplitter::handle {
+     background-color: transparent;
+     }
+
+QSplitter::handle:horizontal {
+     background-color: transparent;
+     width: 2px;
+     }
+
+QSplitter::handle:vertical {
+     background-color: transparent;
+     height: 2px;
+     }
+
+QTabBar::tab {
+     border: 1px solid #000000;
+     border-radius: 3px;
+	}
+
+QLineEdit {
+     border: 1px solid #000000;
+     border-radius: 3px;
+     background: #adcaff;
+     color: #000000;
+     }
+
+ChatLineEdit {
+     border: 1px solid #000000;
+     border-radius: 3px;
+     background: #adcaff;
+     color: #000000;
+     }
+
+QPushButton {
+     background-color: #adcaff;
+     border: 1px solid #000000;
+     border-radius: 3px;
+     padding-left: 14px; padding-right: 14px;
+     padding-top: 3px; padding-bottom: 3px;
+     color: #000000;
+     }
+
+QPushButton:hover, QMenuBar::item:selected  {
+     background: #2240f2;
+     border: 1px solid #000000;
+     border-radius: 3px;
+     color: #000000;
+     }
+     
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+     background: #2240f2;
+     padding: 3px;
+}
+     
+QTabBar::tab:!selected {
+	margin-top:2px;
+     padding: 3px;
+}
+
+QPushButton:pressed {
+     background: #adcaff;
+     border: 1px solid #000000;
+     border-radius: 3px;
+     color: #000000;
+     }
+
+QPushButton:disabled {
+     background: #FFFFC9;
+     border: 1px solid #000000;
+     border-radius: 3px;
+     color: #000000;
+     }
+
+QMenu, QMenuBar, QMenuBar::item {
+     background: #adcaff;
+     color: #000000;
+     }
+
+QMenu::item:selected {
+     background: #2240f2;
+     color: #000000;
+     }
+
+QMenu::item:disabled {
+     background: ;
+     color: #000000;
+     }
+
+QComboBox {
+     border:1px solid #000000;
+     border-radius: 3px;
+     background: #adcaff;
+     color: #000000;
+     padding: 2px;
+     }
+
+QListView {
+     background: ;
+     color: #000000;
+     border: 1px solid #000000;
+     }
+
+InfoFrame {
+     background: #adcaff;
+     color: #000000;
+     }
+
+ChatTab {
+     background: #adcaff;
+     color: #000000;
+     }
+
+QScrollBar::up-arrow:vertical {
+     background: url('styles/bluesky/up_arrow.png');
+     background-repeat: none;
+     left: 3px;top: 5px;
+     }
+
+QScrollBar::down-arrow:vertical {
+     background: url('styles/bluesky/down_arrow.png');
+     background-repeat: none;
+     left: 3px;top: 5px;
+     }
+
+InfoFrame {
+        border: 1px solid #adcaff;
+        border-radius: 4px;
+    background: #adcaff;
+        background-image: url('styles/Lineage2/info_frame.png');
+        background-repeat: none;
+        background-position: top right;
+        background-attachment: fixed;
+    color: #000;
+        selection-background-color: #adcaff;
+        selection-color: #000;
+        padding: 4px;
+}
+
+QTextEdit#ChatTab {
+            border: 1px solid #adcaff;
+        border-radius: 4px;
+        background: #adcaff;
+    background-image: url('styles/Lineage2/chat_tab.png');
+    background-repeat: none;
+    background-position: top right;
+          background-attachment: fixed;
+    color: #dcdcdc;
+    selection-background-color: #adcaff;
+        selection-color: #000;
+}
+
+QScrollBar::left-arrow:horizontal {
+     background: url('styles/bluesky/left_arrow.png');
+     background-repeat: none;
+     left: 5px;
+     top: 3px;
+     }
+
+QScrollBar::right-arrow:horizontal {
+     background: url('styles/bluesky/right_arrow.png');
+     background-repeat: none;
+     left: 5px;
+     top: 3px;
+     }

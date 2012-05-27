@@ -1,0 +1,20 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+	<file alias="editcopy.png">Pics/editcopy.png</file>
+	<file alias="editcut.png">Pics/editcut.png</file>
+	<file alias="editpaste.png">Pics/editpaste.png</file>
+	<file alias="editpreferences.png">Pics/editpreferences.png</file>
+	<file alias="exit.png">Pics/exit.png</file>
+	<file alias="filenew.png">Pics/filenew.png</file>
+	<file alias="fileopen.png">Pics/fileopen.png</file>
+	<file alias="fileprint.png">Pics/fileprint.png</file>
+	<file alias="filesave.png">Pics/filesave.png</file>
+	<file alias="filesaveas.png">Pics/filesaveas.png</file>
+	<file alias="filetype_pdf.png">Pics/filetype_pdf.png</file>
+	<file alias="filetype_html.png">Pics/filetype_html.png</file>
+	<file alias="help_help.png">Pics/help_help.png</file>
+	<file alias="new.png">Pics/new.png</file>
+	<file alias="print.png">Pics/print.png</file>
+	<file alias="save.png">Pics/save.png</file>
+	<file alias="undo.png">Pics/undo.png</file>
+</RCC>
