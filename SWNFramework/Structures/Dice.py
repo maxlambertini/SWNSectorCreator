@@ -74,11 +74,11 @@ def dF(num_die = 1, delta = 0):
 
 
 if __name__ == "__main__":
-    print "D100: ", dN(100)
-    print "D6: ", d6()
-    print "DF: ", dF()
-    print "3d6: ", d6(3)
-    print "4dF: ", dF(4)
+    print ("D100: ", dN(100))
+    print ("D6: ", d6())
+    print ("DF: ", dF())
+    print ("3d6: ", d6(3))
+    print ("4dF: ", dF(4))
 
-    print "2d6+6: ", d6(2,6)
-    print "3dF+1: ", dF(3,1)
+    print ("2d6+6: ", d6(2,6))
+    print ("3dF+1: ", dF(3,1))

@@ -1,6 +1,6 @@
-from PySide.QtGui import *
-from PySide.QtCore import *
-from PySide.QtSvg import *
+from PySide2.QtGui import *
+from PySide2.QtCore import *
+from PySide2.QtSvg import *
 
 import os
 import string
@@ -123,6 +123,6 @@ def exportSectorToHtml(scene, sector, filename):
             f.write(html)
         
     except Exception as err:
-        print err
-        print "Error writing file "
+        print (err)
+        print ("Error writing file ")
         pass

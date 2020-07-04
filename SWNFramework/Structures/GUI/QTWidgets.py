@@ -1,5 +1,6 @@
-from PySide.QtCore import *
-from PySide.QtGui import *
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import * 
 from SWNFramework.Structures.Tables import StarSystem, get_tags
 from SWNFramework.Structures import Tables
 from SWNFramework.Structures.GUI import QTGraphicsItems, SWNDialogs,\
@@ -310,7 +311,7 @@ class SWNGraphicsView(QGraphicsView):
     def change_system(self):
         if (self.current_system != None):
             if SWNDialogs.Question("Do you want to reinitialize system data?"):
-                print "Current System is " + self.current_system.name
+                #print "Current System is " + self.current_system.name
                 self.current_system.initialize_data()
                 self.repaint()
                 self.starSystemChanged.emit(self.current_selected_item,self.current_system)
@@ -416,7 +417,7 @@ class SWNGraphicsView(QGraphicsView):
         s_rect = self.scene.sceneRect()
         ratio = 0.75* (p_rect.width() - (left+right)) / s_rect.width()
         
-        print "Ratio is ", ratio
+        print ("Ratio is ", ratio)
         
         m_doc = QTextDocument()
         m_cur = QTextCursor(m_doc)

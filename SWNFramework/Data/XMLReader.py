@@ -5,7 +5,7 @@ Created on 30/giu/2011
 '''
 
 from xml.dom.minidom import *
-from PySide.QtCore import QDir
+from PySide2.QtCore import QDir
 import string
 import os
 
@@ -44,13 +44,13 @@ def __parseTags (dom):
     res = {}
     for tag in dom.getElementsByTagName("Tag"):
         a = { 
-             'name': string.strip( getText(tag.getElementsByTagName("Name")[0])),
-             'description': string.strip( getText(tag.getElementsByTagName("Description")[0])),
-             'enemies': string.strip( getText(tag.getElementsByTagName("Enemies")[0])),
-             'friends': string.strip( getText(tag.getElementsByTagName("Friends")[0])),
-             'things': string.strip( getText(tag.getElementsByTagName("Things")[0])),
-             'places': string.strip( getText(tag.getElementsByTagName("Places")[0])),
-             'complications': string.strip( getText(tag.getElementsByTagName("Complications")[0]))
+             'name': getText(tag.getElementsByTagName("Name")[0]).strip(),
+             'description': getText(tag.getElementsByTagName("Description")[0]).strip(),
+             'enemies': getText(tag.getElementsByTagName("Enemies")[0]).strip(),
+             'friends': getText(tag.getElementsByTagName("Friends")[0]).strip(),
+             'things': getText(tag.getElementsByTagName("Things")[0]).strip(),
+             'places': getText(tag.getElementsByTagName("Places")[0]).strip(),
+             'complications': getText(tag.getElementsByTagName("Complications")[0]).strip()
              }
         res [a['name']] = a
     return res
@@ -59,17 +59,23 @@ def ReadTagsFromConfiguration():
     try:
         map = {}
         dom_file = os.path.join(QDir.currentPath(),"Data","swn_tag_data.xml")
-        print "fetching data from ", dom_file
+        print ("fetching data from ", dom_file)
         dom = parse(dom_file)
         map["Tags"] = __parseTags(dom)
+        print ("tags")
         map["Atmosphere"] = __parseTable(dom.getElementsByTagName("Atmosphere")[0])        
+        print ("tags")
         map["Biosphere"] = __parseTable(dom.getElementsByTagName("Biosphere")[0])
+        print ("tags")
         map["Tech"] = __parseTable(dom.getElementsByTagName("Tech")[0])
+        print ("tags")
         map["Temperature"] = __parseTable(dom.getElementsByTagName("Temperature")[0])
+        print ("tags")
         map["Population"] = __parseTable1(dom.getElementsByTagName("Population")[0])
+        print ("returning map")
         return map
     except Exception as inst:
-        print "Some error occurred: %s", inst
+        print ("Some error occurred: %s", inst)
         return None
 
 

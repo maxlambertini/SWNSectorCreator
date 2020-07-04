@@ -1,7 +1,8 @@
-from PySide.QtGui import *
-from PySide.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtCore import *
+from PySide2.QtWidgets import *
 from SWNFramework.Structures.Tables import StarSystem
-import SWNConstants
+import SWNFramework.Structures.GUI.SWNConstants as SWNConstants
 
 from math import *
 
@@ -57,14 +58,14 @@ class LinkLineItem(QGraphicsItem):
         p_key = ( pos_key[0], pos_key[1])
         if not p_key in sector.links.keys():
             sector.links[p_key]  = self
-            print sector.links
+            #print sector.links
         
         self.penRoute = SWNConstants.penRoute
         self.penRouteSel = SWNConstants.penRouteSel
         pass
     
     def boundingRect(self):
-        print "returning ", self.rect
+        #print "returning ", self.rect
         return self.rect
     
     def paint (self,painter,option,widget):

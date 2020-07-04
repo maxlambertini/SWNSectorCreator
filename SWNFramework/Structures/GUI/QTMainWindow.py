@@ -1,5 +1,7 @@
-from PySide.QtCore import *
-from PySide.QtGui import *
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import * 
+from PySide2.QtPrintSupport import *
 from SWNFramework.Structures.GUI import QTWidgets, SWNDialogs, SceneExporter
 from SWNFramework.Structures.Tables import deserialize_sector
 from SWNFramework.Structures.GUI.QTWidgets import SWNSystemEditor
@@ -209,7 +211,7 @@ class SWNMainWindow(QMainWindow):
             else:
                 event.ignore()
         except:
-            print "Error saving, forcing close"
+            print ("Error saving, forcing close")
             pass
     
     def handle_fileNewSector(self):
@@ -221,7 +223,7 @@ class SWNMainWindow(QMainWindow):
                 self.filename = None
                 self.txtSectorName.setText(self.sector.name)
         except:
-            print "Error..."
+            print ("Error...")
             self.SWNView.create_new_sector()
             self.sector = self.SWNView.sector
             self.txtSectorName.setText(self.sector.name)
@@ -237,10 +239,10 @@ class SWNMainWindow(QMainWindow):
                                                    "./",
                                                    "SWN Sector files (*.swnsector)")
                 if filename is not None or filename != "":
-                    print "Load Sector  from ", filename
+                    print ("Load Sector  from ", filename)
                     self.sector = deserialize_sector(filename)
                     self.txtSectorName.setText(self.sector.name)
-                    print str(self.sector)
+                    print (str(self.sector))
                     self.SWNView.set_sector(self.sector)
                     self.filename = filename
         except:
@@ -271,10 +273,10 @@ class SWNMainWindow(QMainWindow):
                                            "./" + self.SWNView.sector.name+".swnsector",
                                            "SWN Sector files (*.swnsector)")
         if filename != "" or filename is not None:
-            print filename
+            print (filename)
             self.SWNView.sector.save_sector(filename)
             self.dirty =False
-            print "Saved Sector on ", filename
+            print ("Saved Sector on ", filename)
             self.filename = filename
             return True
         else:
@@ -351,7 +353,7 @@ class SWNMainWindow(QMainWindow):
     
     def handle_helpAbout(self):
         res = SWNDialogs.Question("Le ore del mattino hanno sempre l'oro in bocca", "Ore")
-        print res
+        print (res)
         pass
     
     def handle_helpAboutQt(self):
@@ -376,9 +378,9 @@ class SWNMainWindow(QMainWindow):
     def handle_systemConnectSystems(self):
         sel_items = self.SWNView.scene.selectedItems()
         if sel_items is None:
-            print "No items selected"
+            print ("No items selected")
         else:
-            print "You selected ", len(sel_items), " items"
+            print ("You selected ", len(sel_items), " items")
             if len(sel_items) == 2:
                 item_1 = sel_items[0]
                 item_2 = sel_items[1]

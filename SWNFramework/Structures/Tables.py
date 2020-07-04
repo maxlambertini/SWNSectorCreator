@@ -1,7 +1,7 @@
 import shelve
 import random
-import Dice
-import Places
+import SWNFramework.Structures.Dice as Dice
+import SWNFramework.Structures.Places
 from SWNFramework.Structures.Places import get_place
 from SWNFramework.Data.XMLReader import *
 
@@ -21,7 +21,7 @@ def get_table2(label,simple_table):
         try:
             pop = random.randrange(minval,maxval)
         except:
-            print "Error getting population: ", minval, maxval
+            print ("Error getting population: ", minval, maxval)
             pop = 1;
     return dict([ ("Label",label),("Description",sel_item["label"]),("Population",pop)])
 
@@ -47,6 +47,7 @@ table_temperature = None
 table_tech = None
 
 data = ReadTagsFromConfiguration()
+print(data)
 if data is not None:
     pass
     table_atmosphere = data["Atmosphere"]
@@ -55,9 +56,9 @@ if data is not None:
     table_tags = data["Tags"]
     table_temperature = data["Temperature"]
     table_tech = data["Tech"]
-    #print table_atmosphere
+    print (table_atmosphere)
 else:
-    print "Data is none, using defaults"
+    #print "Data is none, using defaults"
     table_atmosphere = [ 
       { 'min' : 2, 'max' : 2, 'label' : "Corrosive" },
       { 'min' : 3, 'max' : 3, 'label' : "Inert gas" },
@@ -718,7 +719,7 @@ else:
 
 
 def get_tags(n=2):
-    a = table_tags.keys()
+    a = list(table_tags.keys())
     random.shuffle(a)
     res = []
     for h in range(0,n):
@@ -726,7 +727,7 @@ def get_tags(n=2):
     return res
 
 class StarSystem:
-    def __init__(self,Name = Places.get_place(),x=0,y=0):
+    def __init__(self,Name = get_place(),x=0,y=0):
         self.initialize_data(Name)
         self.coords= (x,y)
         self.hidden = False
@@ -851,7 +852,7 @@ Tags:
         return res
 
 class Sector:
-    def __init__(self,m_name = Places.get_place()):
+    def __init__(self,m_name = get_place()):
         self.name = m_name
         num_sys =  Dice.d10(1, 20)
         self.systems = {}

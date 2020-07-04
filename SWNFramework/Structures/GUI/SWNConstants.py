@@ -1,7 +1,7 @@
-from PySide.QtGui import QColor, QBrush, QPen
-from PySide.QtCore import Qt
+from PySide2.QtGui import QColor, QBrush, QPen
+from PySide2.QtCore import Qt
 
-print "Initializing Color"
+# print "Initializing Color"
 
 colorHexLine        = QColor(Qt.green)
 colorHexBrush       = QColor(192,255,192)

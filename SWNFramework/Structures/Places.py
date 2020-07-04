@@ -442,8 +442,8 @@ Zimmerman/Zimmerman/Zimmerwald/Zinc/Zinner/Zion/Zions/Zita/Zlata Koruna /Zoar/Zo
 """
 
 __places =[]
-for line in string.split(__places_data,"\n"):
-    for word in string.split(line,"/"):
+for line in __places_data.split("\n"):
+    for word in line.split("/"):
         __places.append(word)
 
 __size = len(__places)
@@ -471,19 +471,19 @@ def get_products(n = 200):
     products =[]
     for h in range(0,n):
         a = (h+1, get_place(), float(random.randint(99,9999))/100.0, random.randint(1,20) )
-        print "%s\t%s\t%s\t%s\t" % (a[0],a[1],a[2],a[3])
+        print ("%s\t%s\t%s\t%s\t" % (a[0],a[1],a[2],a[3]))
         
 def get_shops():
     shops = []
     shops_column = ("ID","ShopName","CityID")
     shop_labels = ("Boutique","Outlet","Store","Boutique","Outlet","Store","Boutique","Outlet","Store","Haven","Paradise")
     s = "%s\t%s\t%s"
-    print s % shops_column
-    print s % (-1,"Internet",-1)
-    print s % (-2,"Reseller",-2)
+    print (s % shops_column)
+    print (s % (-1,"Internet",-1))
+    print (s % (-2,"Reseller",-2))
     for h in range(1,501):
         shop_name = get_place() + " " + shop_labels[h % len(shop_labels)]
-        print s % (h,shop_name,random.randint(1,8094))
+        print (s % (h,shop_name,random.randint(1,8094)))
 
 def get_sales ():
     sales = []
@@ -491,7 +491,7 @@ def get_sales ():
     sales_len = len(sales_mult)
     sales_column = ("ID","ProductID","CityID","DateID","Discount","Qty","ResellerID")
     mask = "%s\t%s\t%s\t\'%s\'\t%s\t%s\t%s"
-    print mask % sales_column
+    print (mask % sales_column)
     id = 300000
     for r in range(1,8095):
         for w in range (0,5+ sales_mult[random.randint(0,sales_len-1)]* random.randint(1,20)):
@@ -508,13 +508,13 @@ def get_sales ():
             elif res1 > 7:
                 shopID = random.randint(1,500)
             d2 = date.today() - d
-            print mask % (id, product_id, city_id,str(d2),discount,qty,shopID)
+            print (mask % (id, product_id, city_id,str(d2),discount,qty,shopID))
 
 def get_dates():
     for h in range(1,1500):
         d = timedelta(h)
         dt = date.today() - d
-        print  '"%s"\t%s\t%s\t%s\t%s\t%s' % (str(dt), str(dt), dt.year, dt.month, dt.day, dt.isoweekday())              
+        print  ('"%s"\t%s\t%s\t%s\t%s\t%s' % (str(dt), str(dt), dt.year, dt.month, dt.day, dt.isoweekday()))	              
 
 if __name__ == "__main__":
     get_sales()

@@ -1,10 +1,11 @@
-from PySide.QtCore import *
-from PySide.QtGui import *
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 
 def Question(text,title="", parent =None) :
     res = QMessageBox.question(parent, title, text,
                                QMessageBox.Yes, QMessageBox.No)  == QMessageBox.Yes
-    print res
+    #print res
     return res
 
 def Error(text, title="",parent = None):
